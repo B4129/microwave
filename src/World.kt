@@ -12,6 +12,8 @@ fun main() {
         when (actionNumber) {
             1 -> human.openDoor(machine.components.door)
             2 -> human.closeDoor(machine.components.door)
+            3 -> human.brokenMachine(machine)
+            4 -> human.repairMachine(machine)
         }
     }
 }
