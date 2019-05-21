@@ -1,5 +1,6 @@
 package Human
 
+import Components.LightButton
 import Components.Door
 import Machine.Machine
 
@@ -20,10 +21,17 @@ class Human {
     }
 
     fun brokenMachine(machine: Machine) {
-        if (machine.operationStatus.isBroken) println(WASBROKENTEXT) else machine.operationStatus.isBroken = true
+        val status = machine.operationStatus
+        if (status.isBroken) println(WASBROKENTEXT) else status.isBroken = true
     }
     fun repairMachine(machine: Machine) {
-        if (!machine.operationStatus.isBroken) println(NOTBROKENTEXT) else machine.operationStatus.isBroken = false
+        val status = machine.operationStatus
+        if (!status.isBroken) println(NOTBROKENTEXT) else status.isBroken = false
+    }
+    fun onClickButtonOfMachine(machine: Machine){
+        println("ポチっ")
+        val components = machine.components
+        components.lightButton.onClick(components.light)
     }
 
 
