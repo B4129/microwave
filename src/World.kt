@@ -1,10 +1,11 @@
 import Human.Human
 import Machine.Machine
+import ValueObject.Name
 
 
 fun main() {
     val machine = Machine()
-    val human = Human()
+    val human = Human(Name("かずき"))
     val isEndProgram = false
     val door = machine.components.door
     while (!isEndProgram) {
